@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="NexaAI Studio — Premium AI-powered creative studio building the next generation of intelligent digital experiences."/>
+  <meta name="theme-color" content="#0A0F1E"/>
+  <title>NexaAI Studio — Build the Future with AI</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     PAGE LOADER
+════════════════════════════════════════════ -->
+<div id="page-loader" role="status" aria-label="Loading NexaAI Studio">
+  <div class="loader-content">
+    <div class="loader-ring"></div>
+    <div class="loader-text">Loading NexaAI Studio</div>
+  </div>
+</div>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand gradient-text" href="#hero">
+      <i class="fas fa-brain me-2"></i>NexaAI
+    </a>
+
+    <div class="d-flex align-items-center gap-2 order-lg-last">
+      <!-- Theme Toggle -->
+      <button id="themeToggle" aria-label="Toggle color theme">
+        <i class="fas fa-moon"></i> Dark
+      </button>
+      <a href="#contact" class="btn nav-btn d-none d-md-block">Get Started</a>
+
+      <button class="navbar-toggler border-0 ms-2" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarContent"
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" style="color:var(--slate-light);font-size:1.1rem;"></i>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+
+        <div class="hero-badge">
+          <span class="dot"></span>
+          AI-Powered Platform · Now in Beta
+        </div>
+
+        <h1 class="hero-title">
+          We Design<br>
+          <span class="gradient-text" id="hero-type">AI Experiences</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          NexaAI Studio crafts intelligent digital products that learn, adapt, and evolve — transforming your boldest ideas into the world's most powerful user experiences.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-wrap mb-4">
+          <input type="text" id="heroSearch" class="search-input"
+                 placeholder="Search services, portfolio, insights…" aria-label="Search NexaAI Studio" autocomplete="off"/>
+          <i class="fas fa-search search-icon" aria-hidden="true"></i>
+          <div id="searchSuggestions" class="search-suggestions" role="listbox"></div>
+        </div>
+
+        <div class="hero-actions d-flex flex-wrap gap-3">
+          <a href="#services" class="btn-primary-glow text-decoration-none">
+            Explore Services <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+          <a href="#portfolio" class="btn-ghost text-decoration-none">
+            View Portfolio <i class="fas fa-eye ms-2"></i>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text">500<span style="font-size:1rem;">+</span></div>
+            <div class="hero-stat-label">Projects Done</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text">98<span style="font-size:1rem;">%</span></div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text">40<span style="font-size:1rem;">+</span></div>
+            <div class="hero-stat-label">AI Models</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num gradient-text">12<span style="font-size:1rem;">yr</span></div>
+            <div class="hero-stat-label">Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual (desktop) -->
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="hero-visual">
+          <div class="hero-img-wrap">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&auto=format&fit=crop"
+                 alt="AI-powered design workspace" loading="eager"/>
+            <div class="hero-img-overlay"></div>
+          </div>
+
+          <div class="hero-card-float card-a">
+            <div class="d-flex align-items-center gap-3">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;">
+                <i class="fas fa-robot" style="color:#fff;font-size:0.85rem;"></i>
+              </div>
+              <div>
+                <div style="font-size:0.78rem;color:var(--slate);">AI Analysis</div>
+                <div style="font-size:0.92rem;font-weight:700;color:var(--text-primary);">99.2% accuracy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-float card-b">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <i class="fas fa-chart-line icon-cyan"></i>
+              <span style="font-size:0.78rem;color:var(--slate);">This week</span>
+            </div>
+            <div style="font-size:1.4rem;font-weight:800;font-family:'Sora',sans-serif;" class="gradient-text">+248%</div>
+            <div style="font-size:0.75rem;color:var(--slate);">Performance boost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════ -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-5 reveal">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=580&q=80&auto=format&fit=crop"
+               alt="NexaAI team at work" loading="lazy"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(6,182,212,0.1));border-radius:20px;"></div>
+          <div class="about-badge-float">
+            <div>12+</div>
+            <span>Years of Innovation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="reveal reveal-delay-1">
+          <div class="section-eyebrow">Who We Are</div>
+          <h2 class="section-title">We Build Intelligent<br><span class="gradient-text">Digital Futures</span></h2>
+          <p class="section-desc mb-4">
+            NexaAI Studio is a premier AI-driven creative agency specializing in building intelligent digital experiences. We merge human creativity with machine precision to deliver products that don't just look stunning — they think and evolve.
+          </p>
+          <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.8;margin-bottom:32px;">
+            Founded in 2012, our multidisciplinary team of designers, engineers, and AI researchers has delivered transformative solutions for Fortune 500 companies, high-growth startups, and visionary entrepreneurs worldwide.
+          </p>
+        </div>
+
+        <!-- Skill Bars -->
+        <div class="skills-wrap reveal reveal-delay-2">
+          <div class="skill-bar">
+            <div class="skill-label"><span>AI & Machine Learning</span><span>96%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="96"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-label"><span>UI/UX Design</span><span>92%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-label"><span>Full-Stack Development</span><span>89%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="89"></div></div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-label"><span>Cloud Architecture</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 mt-4 reveal reveal-delay-3">
+          <a href="#services" class="btn-primary-glow text-decoration-none" style="font-size:0.88rem;padding:12px 28px;">
+            Our Services
+          </a>
+          <a href="#contact" class="btn-ghost text-decoration-none" style="font-size:0.88rem;padding:12px 28px;">
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="section-eyebrow">What We Do</div>
+        <h2 class="section-title">Services Built for<br><span class="gradient-text">the AI Era</span></h2>
+      </div>
+      <div class="col-lg-6 reveal reveal-delay-1 d-flex align-items-end">
+        <p class="section-desc">
+          End-to-end digital solutions powered by cutting-edge AI — from intelligent design systems to autonomous data pipelines.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Service Cards -->
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(124,58,237,0.15);">
+            <i class="fas fa-brain icon-violet"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">AI Strategy & Consulting</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            We audit your business processes, identify high-value AI opportunities, and build a custom roadmap that delivers measurable ROI from day one.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(124,58,237,0.15);color:var(--violet);border-radius:6px;font-size:0.72rem;">Strategy</span>
+            <span class="badge" style="background:rgba(124,58,237,0.15);color:var(--violet);border-radius:6px;font-size:0.72rem;">Roadmap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(6,182,212,0.15);">
+            <i class="fas fa-palette icon-cyan"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">Intelligent UI/UX Design</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            Interfaces that adapt in real-time to user behavior. Our AI-assisted design process generates and validates 10× more design variations than traditional methods.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(6,182,212,0.15);color:var(--cyan);border-radius:6px;font-size:0.72rem;">Design</span>
+            <span class="badge" style="background:rgba(6,182,212,0.15);color:var(--cyan);border-radius:6px;font-size:0.72rem;">Prototyping</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(245,158,11,0.15);">
+            <i class="fas fa-code" style="color:#F59E0B;"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">Full-Stack AI Development</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            From front-end interfaces to ML model deployment — we build, test, and scale production-ready AI applications across web, mobile, and cloud.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(245,158,11,0.15);color:#F59E0B;border-radius:6px;font-size:0.72rem;">React</span>
+            <span class="badge" style="background:rgba(245,158,11,0.15);color:#F59E0B;border-radius:6px;font-size:0.72rem;">Python</span>
+            <span class="badge" style="background:rgba(245,158,11,0.15);color:#F59E0B;border-radius:6px;font-size:0.72rem;">Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(16,185,129,0.15);">
+            <i class="fas fa-chart-bar" style="color:#10B981;"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">Smart Data Analytics</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            Transform raw data into predictive intelligence. Our analytics layer processes millions of events in real-time, surfacing insights before they become obvious.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(16,185,129,0.15);color:#10B981;border-radius:6px;font-size:0.72rem;">Analytics</span>
+            <span class="badge" style="background:rgba(16,185,129,0.15);color:#10B981;border-radius:6px;font-size:0.72rem;">Real-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(239,68,68,0.15);">
+            <i class="fas fa-comments" style="color:#EF4444;"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">Conversational AI & Chatbots</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            Deploy intelligent AI assistants that handle complex multi-turn conversations across customer service, sales, and internal operations — 24/7.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(239,68,68,0.15);color:#EF4444;border-radius:6px;font-size:0.72rem;">NLP</span>
+            <span class="badge" style="background:rgba(239,68,68,0.15);color:#EF4444;border-radius:6px;font-size:0.72rem;">GPT-4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card h-100 p-4">
+          <div class="service-icon" style="background:rgba(124,58,237,0.15);">
+            <i class="fas fa-shield-halved icon-violet"></i>
+          </div>
+          <h5 class="mb-3" style="font-family:'Sora',sans-serif;">AI Security & Governance</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">
+            Responsible AI deployment with bias detection, explainability dashboards, compliance auditing, and robust model monitoring for enterprise environments.
+          </p>
+          <div class="mt-3 d-flex flex-wrap gap-2">
+            <span class="badge" style="background:rgba(124,58,237,0.15);color:var(--violet);border-radius:6px;font-size:0.72rem;">Security</span>
+            <span class="badge" style="background:rgba(124,58,237,0.15);color:var(--violet);border-radius:6px;font-size:0.72rem;">Compliance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     STATS COUNTER SECTION
+════════════════════════════════════════════ -->
+<section id="stats" class="section-pad">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 reveal">
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-num" data-target="500">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Projects Shipped</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal reveal-delay-1">
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-num" data-target="98">0</span>
+            <span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal reveal-delay-2">
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-num" data-target="2400000">0</span>
+          </div>
+          <div class="stat-label">API Calls / Day</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 reveal reveal-delay-3">
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-num" data-target="4.9" data-decimal="true">0</span>
+            <span class="stat-suffix">★</span>
+          </div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     PORTFOLIO SECTION
+════════════════════════════════════════════ -->
+<section id="portfolio" class="section-pad">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-7 reveal">
+        <div class="section-eyebrow">Our Work</div>
+        <h2 class="section-title">Selected<br><span class="gradient-text">Portfolio</span></h2>
+      </div>
+    </div>
+
+    <!-- Filter Nav -->
+    <div class="filter-nav reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="ai">AI Projects</button>
+      <button class="filter-btn" data-filter="design">UI/UX Design</button>
+      <button class="filter-btn" data-filter="data">Data & Analytics</button>
+      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+    </div>
+
+    <div class="row g-4" id="portfolioGrid">
+      <!-- Item 1 -->
+      <div class="col-md-6 col-lg-4 port-col reveal">
+        <div class="portfolio-item glass-card" data-category="ai">
+          <span class="portfolio-tag">AI</span>
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&q=80&auto=format&fit=crop"
+               alt="Neural Network Visualizer project" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>Neural Network Visualizer</h5>
+            <p>Interactive 3D visualization of deep learning architectures</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="col-md-6 col-lg-4 port-col reveal reveal-delay-1">
+        <div class="portfolio-item glass-card" data-category="design">
+          <span class="portfolio-tag">Design</span>
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&q=80&auto=format&fit=crop"
+               alt="FinTech dashboard UI design" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>FinTech Dashboard Suite</h5>
+            <p>Premium UI system for a $2B trading platform</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="col-md-6 col-lg-4 port-col reveal reveal-delay-2">
+        <div class="portfolio-item glass-card" data-category="data">
+          <span class="portfolio-tag">Data</span>
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80&auto=format&fit=crop"
+               alt="Analytics platform" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>Real-Time Analytics Hub</h5>
+            <p>Processing 50M events/day with predictive alerts</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="col-md-6 col-lg-4 port-col reveal">
+        <div class="portfolio-item glass-card" data-category="mobile">
+          <span class="portfolio-tag">Mobile</span>
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80&auto=format&fit=crop"
+               alt="Health AI mobile app" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>HealthAI Companion</h5>
+            <p>Personalized health coaching with 1.2M active users</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="col-md-6 col-lg-4 port-col reveal reveal-delay-1">
+        <div class="portfolio-item glass-card" data-category="ai">
+          <span class="portfolio-tag">AI</span>
+          <img src="https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=500&q=80&auto=format&fit=crop"
+               alt="E-commerce AI recommendation engine" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>Commerce Intelligence Engine</h5>
+            <p>AI recommendations driving 340% revenue uplift</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="col-md-6 col-lg-4 port-col reveal reveal-delay-2">
+        <div class="portfolio-item glass-card" data-category="design">
+          <span class="portfolio-tag">Design</span>
+          <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=500&q=80&auto=format&fit=crop"
+               alt="SaaS platform design system" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <h5>Enterprise Design System</h5>
+            <p>500+ component library powering 8 product lines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     TESTIMONIALS SECTION
+════════════════════════════════════════════ -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="section-eyebrow">Testimonials</div>
+        <h2 class="section-title">What Our<br><span class="gradient-text">Clients Say</span></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 reveal" style="position:relative;padding-bottom:90px;">
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="glass-card testimonial-card">
+                <div class="star-rating">★★★★★</div>
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  NexaAI completely reinvented our product experience. Their AI recommendation engine increased our conversion rate by 340% in three months. The team's depth of knowledge in both design and machine learning is unmatched in the industry.
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Chen" class="testimonial-avatar"/>
+                  <div>
+                    <div class="testimonial-name">Sarah Chen</div>
+                    <div class="testimonial-role">CTO, ShopFlow Inc. · Series B, $85M</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="glass-card testimonial-card">
+                <div class="star-rating">★★★★★</div>
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  We partnered with NexaAI to rebuild our analytics platform from the ground up. They delivered a system processing 50 million events daily with sub-100ms latency. The quality of engineering and design thinking is extraordinary.
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus Rivera" class="testimonial-avatar"/>
+                  <div>
+                    <div class="testimonial-name">Marcus Rivera</div>
+                    <div class="testimonial-role">VP Engineering, DataLayer · Fortune 500</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="glass-card testimonial-card">
+                <div class="star-rating">★★★★★</div>
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  The AI chatbot NexaAI built for us handles 85% of our customer service volume autonomously. Our CSAT scores actually went up by 22 points. They didn't just build software — they transformed how we think about customer relationships.
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Mehta" class="testimonial-avatar"/>
+                  <div>
+                    <div class="testimonial-name">Priya Mehta</div>
+                    <div class="testimonial-role">CEO, SupportAI Labs · YC W23</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left" style="color:var(--text-primary);font-size:0.85rem;"></i>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right" style="color:var(--text-primary);font-size:0.85rem;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Client Logos -->
+      <div class="col-lg-4 d-flex flex-column justify-content-center reveal reveal-delay-1">
+        <p class="section-eyebrow mb-3">Trusted By</p>
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">Shopflow</div>
+          </div>
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">DataLayer</div>
+          </div>
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">NeuraCore</div>
+          </div>
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">ArcVentures</div>
+          </div>
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">PulseHealth</div>
+          </div>
+          <div class="col-6">
+            <div class="glass-card p-3 text-center" style="font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--slate);">Synaptic</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     AI RECOMMENDATIONS SECTION
+════════════════════════════════════════════ -->
+<section id="ai-rec" class="section-pad">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7 reveal">
+        <div class="section-eyebrow">AI-Powered For You</div>
+        <h2 class="section-title">Personalized<br><span class="gradient-text">Recommendations</span></h2>
+        <p class="section-desc mt-2">Our AI analyzed your browsing behavior and industry to surface solutions most relevant to your goals.</p>
+      </div>
+    </div>
+    <div class="row g-4" id="recGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     BLOG / NEWS SECTION
+════════════════════════════════════════════ -->
+<section id="blog" class="section-pad">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6 reveal">
+        <div class="section-eyebrow">Latest Insights</div>
+        <h2 class="section-title">From Our<br><span class="gradient-text">Blog & News</span></h2>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="glass-card blog-card h-100" style="overflow:hidden;">
+          <div style="overflow:hidden;">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&q=80&auto=format&fit=crop" alt="The Future of Generative AI in Product Design" loading="lazy"/>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">AI Trends</span>
+            <h4 class="blog-title">The Future of Generative AI in Product Design</h4>
+            <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.6;">
+              How foundation models are reshaping the entire product creation pipeline — from ideation to deployment and beyond.
+            </p>
+            <div class="blog-meta">
+              <i class="fas fa-calendar-alt me-1"></i> June 2, 2025 &nbsp;·&nbsp;
+              <i class="fas fa-clock me-1"></i> 8 min read
+            </div>
+            <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card blog-card h-100" style="overflow:hidden;">
+          <div style="overflow:hidden;">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=500&q=80&auto=format&fit=crop" alt="Building Responsible AI Systems" loading="lazy"/>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Engineering</span>
+            <h4 class="blog-title">Building Responsible AI Systems at Scale</h4>
+            <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.6;">
+              Practical frameworks for bias detection, model explainability, and governance that our team has battle-tested across 200+ deployments.
+            </p>
+            <div class="blog-meta">
+              <i class="fas fa-calendar-alt me-1"></i> May 24, 2025 &nbsp;·&nbsp;
+              <i class="fas fa-clock me-1"></i> 12 min read
+            </div>
+            <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card blog-card h-100" style="overflow:hidden;">
+          <div style="overflow:hidden;">
+            <img class="blog-img" src="https://images.unsplash.com/photo-1585079542156-2755d9c8a094?w=500&q=80&auto=format&fit=crop" alt="Designing for the AI-Native User" loading="lazy"/>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Design</span>
+            <h4 class="blog-title">Designing for the AI-Native User in 2025</h4>
+            <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.6;">
+              Users expect software to understand them. We share our research-backed UX principles for designing AI-first experiences that feel magical, not creepy.
+            </p>
+            <div class="blog-meta">
+              <i class="fas fa-calendar-alt me-1"></i> May 15, 2025 &nbsp;·&nbsp;
+              <i class="fas fa-clock me-1"></i> 6 min read
+            </div>
+            <a href="#" class="blog-read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 reveal">
+        <div class="section-eyebrow">FAQ</div>
+        <h2 class="section-title">Frequently<br><span class="gradient-text">Asked Questions</span></h2>
+        <p class="section-desc mt-3">
+          Everything you need to know about working with NexaAI Studio. Can't find the answer you're looking for? Reach out to our team.
+        </p>
+        <a href="#contact" class="btn-primary-glow text-decoration-none d-inline-block mt-4" style="font-size:0.88rem;padding:12px 28px;">
+          Contact Us
+        </a>
+      </div>
+
+      <div class="col-lg-7 reveal reveal-delay-1">
+        <div class="faq-item">
+          <button class="faq-question">
+            How does your AI-assisted design process work?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            We begin with a discovery phase to deeply understand your brand, users, and business goals. Our AI toolchain then generates hundreds of design directions in parallel, which our senior designers curate and refine. This hybrid approach produces more creative, better-validated designs in a fraction of the usual time.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What industries do you specialize in?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            We have deep expertise in FinTech, HealthTech, E-commerce, SaaS, and Enterprise software. That said, our core methodologies — AI-assisted design, rigorous user research, and scalable engineering — translate effectively to any industry where digital experiences matter.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How long does a typical project take?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            Timelines vary by scope. A focused MVP typically takes 6–10 weeks. A comprehensive platform rebuild ranges from 3 to 6 months. Our AI-accelerated workflow often cuts traditional timelines by 30–40% without sacrificing quality.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer ongoing support after launch?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            Yes. We offer three tiers of post-launch support: Essential (bug fixes & monitoring), Growth (iterative improvements & A/B testing), and Enterprise (dedicated engineering team + SLA). Most clients grow with us beyond the initial project.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What does engagement typically cost?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            Projects are scoped individually based on complexity, team size, and duration. Strategy engagements start at $15K. Full-platform builds typically range from $80K to $400K+. We also offer milestone-based payment structures to align incentives with your success.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can you work with our existing tech stack?
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We've integrated with virtually every major technology stack — React, Vue, Angular, Next.js, Django, FastAPI, AWS, GCP, Azure, Kubernetes, and more. We adapt to your environment rather than forcing a rewrite.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════ -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 reveal">
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-title">Start Your<br><span class="gradient-text">AI Journey</span></h2>
+        <p class="section-desc mt-3 mb-4">
+          Ready to transform your digital experience with AI? Tell us about your vision and we'll get back to you within 24 hours.
+        </p>
+
+        <div class="d-flex flex-column gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;border-radius:12px;background:rgba(124,58,237,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-envelope icon-violet"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;">Email</div>
+              <div style="font-weight:600;font-size:0.9rem;">hello@nexaai.studio</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;border-radius:12px;background:rgba(6,182,212,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-phone icon-cyan"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;">Phone</div>
+              <div style="font-weight:600;font-size:0.9rem;">+1 (415) 299-7842</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="fas fa-map-marker-alt" style="color:#F59E0B;"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--slate);text-transform:uppercase;letter-spacing:1px;">Office</div>
+              <div style="font-weight:600;font-size:0.9rem;">San Francisco, CA · Remote-first</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links mt-4">
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-btn" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7 reveal reveal-delay-1">
+        <div class="contact-form-wrap">
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label" for="contactName">Full Name</label>
+                  <input type="text" id="contactName" class="form-control-custom" placeholder="Alex Johnson" autocomplete="name"/>
+                  <div class="form-error" id="nameError">Please enter your full name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label" for="contactEmail">Email Address</label>
+                  <input type="email" id="contactEmail" class="form-control-custom" placeholder="alex@company.com" autocomplete="email"/>
+                  <div class="form-error" id="emailError">Please enter a valid email address.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label" for="contactCompany">Company</label>
+                  <input type="text" id="contactCompany" class="form-control-custom" placeholder="Your Company" autocomplete="organization"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label" for="contactService">Service Interest</label>
+                  <select id="contactService" class="form-control-custom">
+                    <option value="">Select a service…</option>
+                    <option>AI Strategy & Consulting</option>
+                    <option>Intelligent UI/UX Design</option>
+                    <option>Full-Stack AI Development</option>
+                    <option>Smart Data Analytics</option>
+                    <option>Conversational AI & Chatbots</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label class="form-label" for="contactMessage">Project Details</label>
+                  <textarea id="contactMessage" class="form-control-custom" rows="5" placeholder="Tell us about your project, goals, timeline, and budget range…"></textarea>
+                  <div class="form-error" id="msgError">Please provide at least a brief description (10+ characters).</div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="contactSubmit" class="btn-primary-glow w-100 mt-2">
+              Send Message <i class="fas fa-paper-plane ms-2"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class="fas fa-check-circle"></i>
+              <span>Message sent! We'll get back to you within 24 hours.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     NEWSLETTER SECTION
+════════════════════════════════════════════ -->
+<section id="newsletter" class="section-pad" style="padding-top:0;">
+  <div class="container">
+    <div class="newsletter-wrap reveal">
+      <div class="section-eyebrow">Newsletter</div>
+      <h3 style="font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:8px;">
+        Stay Ahead of the <span class="gradient-text">AI Curve</span>
+      </h3>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:480px;margin:0 auto;">
+        Weekly insights on AI design, engineering breakthroughs, and the future of intelligent products — curated by our team.
+      </p>
+      <form id="newsletterForm" class="newsletter-input-group" novalidate>
+        <input type="email" id="nlEmail" class="newsletter-input" placeholder="Enter your email address" autocomplete="email" aria-label="Newsletter email"/>
+        <button type="submit" id="nlSubmit" class="btn-primary-glow" style="white-space:nowrap;padding:14px 28px;">
+          Subscribe
+        </button>
+      </form>
+      <p style="font-size:0.75rem;color:var(--slate);margin-top:14px;">
+        <i class="fas fa-lock me-1"></i> No spam. Unsubscribe anytime. Join 12,000+ subscribers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand gradient-text">
+          <i class="fas fa-brain me-2"></i>NexaAI Studio
+        </div>
+        <p class="footer-desc mt-2">
+          Building intelligent digital products that transform businesses and delight users — since 2012.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-btn" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Company</div>
+        <a href="#about" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Careers <span style="font-size:0.65rem;background:var(--violet);color:#fff;padding:2px 6px;border-radius:4px;margin-left:4px;">Hiring</span></a>
+        <a href="#" class="footer-link">Press Kit</a>
+        <a href="#" class="footer-link">Partners</a>
+        <a href="#" class="footer-link">Investors</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Services</div>
+        <a href="#services" class="footer-link">AI Strategy</a>
+        <a href="#services" class="footer-link">UI/UX Design</a>
+        <a href="#services" class="footer-link">Development</a>
+        <a href="#services" class="footer-link">Data Analytics</a>
+        <a href="#services" class="footer-link">AI Chatbots</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Resources</div>
+        <a href="#blog" class="footer-link">Blog</a>
+        <a href="#" class="footer-link">Case Studies</a>
+        <a href="#" class="footer-link">Documentation</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="#" class="footer-link">API Reference</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Legal</div>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+        <a href="#" class="footer-link">Security</a>
+      </div>
+    </div>
+
+    <hr class="footer-divider"/>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+      <div>© 2025 NexaAI Studio. All rights reserved.</div>
+      <div class="d-flex align-items-center gap-2">
+        <span style="width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;animation:pulse-dot 2s infinite;"></span>
+        All systems operational
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
