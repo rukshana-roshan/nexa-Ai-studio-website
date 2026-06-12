@@ -1,0 +1,321 @@
+/* ── Reset & base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #0D1117;
+  --navy2:  #161B24;
+  --navy3:  #1F2733;
+  --gold:   #FFD700;
+  --gold2:  #FFA500;
+  --coral:  #FF4D6D;
+  --slate:  #8892A4;
+  --cream:  #F0EAD6;
+  --white:  #FFFFFF;
+
+  --font-display: 'Boogaloo', cursive;
+  --font-mono:    'Space Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Ambient particles ─────────────────────────────────── */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+  10%  { opacity: 0.15; }
+  90%  { opacity: 0.1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* ── Layout wrapper ────────────────────────────────────── */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 1.5rem 1.5rem;
+  gap: 1.5rem;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+header {
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+}
+
+.result-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: 1;
+  color: var(--cream);
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.25);
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.result-title.win1 {
+  color: var(--gold);
+  text-shadow: 0 0 60px rgba(255, 215, 0, 0.5), 0 0 100px rgba(255, 165, 0, 0.3);
+}
+.result-title.win2 {
+  color: var(--coral);
+  text-shadow: 0 0 60px rgba(255, 77, 109, 0.55), 0 0 100px rgba(255, 77, 109, 0.3);
+}
+.result-title.draw {
+  color: var(--slate);
+  text-shadow: 0 0 30px rgba(136, 146, 164, 0.4);
+}
+
+/* ── Arena (3-column layout) ───────────────────────────── */
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ── Player card ───────────────────────────────────────── */
+.player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 160px;
+  max-width: 260px;
+}
+
+.player-label {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  text-transform: uppercase;
+}
+
+/* ── Dice container ────────────────────────────────────── */
+.dice-wrap {
+  width: clamp(110px, 22vw, 160px);
+  height: clamp(110px, 22vw, 160px);
+  perspective: 600px;
+}
+
+.dice-face {
+  width: 100%;
+  height: 100%;
+  background: var(--navy2);
+  border-radius: 18px;
+  border: 2px solid var(--navy3);
+  box-shadow:
+    0 0 0 1px rgba(255,215,0,0.08),
+    0 8px 32px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 16%;
+  gap: 8%;
+  transition: transform 0.1s;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.dice-face.rolling {
+  animation: rollAnim 0.5s ease-out;
+}
+
+@keyframes rollAnim {
+  0%   { transform: rotateX(0deg)   rotateY(0deg)   scale(1); }
+  25%  { transform: rotateX(180deg) rotateY(90deg)  scale(0.85); }
+  60%  { transform: rotateX(360deg) rotateY(270deg) scale(1.08); }
+  80%  { transform: rotateX(400deg) rotateY(310deg) scale(0.96); }
+  100% { transform: rotateX(360deg) rotateY(360deg) scale(1); }
+}
+
+/* ── Dots ──────────────────────────────────────────────── */
+.dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+  transition: background 0.3s, box-shadow 0.3s;
+  opacity: 0; /* hidden by default; JS makes specific ones visible */
+}
+.dot.active {
+  opacity: 1;
+}
+
+/* Winner card highlight */
+.player-card.winner .dice-face {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 1px rgba(255,215,0,0.4),
+    0 8px 48px rgba(255, 215, 0, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+}
+.player-card.winner .dot {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(255,215,0,0.9);
+}
+.player-card.loser .dice-face {
+  opacity: 0.55;
+}
+.player-card.loser .dot {
+  background: var(--slate);
+  box-shadow: none;
+}
+.player-card.winner-p2 .dice-face {
+  border-color: var(--coral);
+  box-shadow:
+    0 0 0 1px rgba(255,77,109,0.4),
+    0 8px 48px rgba(255, 77, 109, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+}
+.player-card.winner-p2 .dot {
+  background: var(--coral);
+  box-shadow: 0 0 8px rgba(255,77,109,0.9);
+}
+
+/* ── Score badge ───────────────────────────────────────── */
+.score-badge {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--navy3);
+  background: var(--slate);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+}
+
+.player-card.winner .score-badge {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 4px 24px rgba(255, 215, 0, 0.5);
+}
+.player-card.winner-p2 .score-badge {
+  background: var(--coral);
+  color: var(--white);
+  box-shadow: 0 4px 24px rgba(255, 77, 109, 0.5);
+}
+
+/* ── VS block ──────────────────────────────────────────── */
+.vs-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.vs-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  color: var(--navy3);
+  background: var(--slate);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* ── Roll button ───────────────────────────────────────── */
+.roll-btn {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--navy);
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  box-shadow:
+    0 4px 20px rgba(255, 215, 0, 0.4),
+    0 2px 0 rgba(0,0,0,0.3) inset;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.roll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.55), 0 2px 0 rgba(0,0,0,0.3) inset;
+}
+.roll-btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.btn-label {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+.btn-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  color: var(--navy3);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .arena { gap: 1rem; }
+  .vs-block { flex-direction: row; gap: 0.8rem; }
+  .vs-text  { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dice-face.rolling { animation: none; }
+  .particle          { animation: none; }
+}

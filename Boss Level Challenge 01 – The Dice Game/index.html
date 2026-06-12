@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicee — Roll to Win</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Ambient particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="wrapper">
+      <header>
+        <p class="eyebrow">🎲 Two-Player Dice</p>
+        <h1 class="result-title" id="result">Roll the Dice!</h1>
+      </header>
+
+      <main class="arena">
+        <!-- Player 1 -->
+        <div class="player-card" id="card1">
+          <div class="player-label">Player 1</div>
+          <div class="dice-wrap" id="diceWrap1">
+            <div class="dice-face" id="dice1">
+              <!-- dots injected by JS -->
+            </div>
+          </div>
+          <div class="score-badge" id="score1">—</div>
+        </div>
+
+        <!-- VS divider -->
+        <div class="vs-block">
+          <span class="vs-text">VS</span>
+          <button class="roll-btn" id="rollBtn" onclick="rollDice()">
+            <span class="btn-label">ROLL</span>
+            <span class="btn-sub">click to roll</span>
+          </button>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="player-card" id="card2">
+          <div class="player-label">Player 2</div>
+          <div class="dice-wrap" id="diceWrap2">
+            <div class="dice-face" id="dice2">
+              <!-- dots injected by JS -->
+            </div>
+          </div>
+          <div class="score-badge" id="score2">—</div>
+        </div>
+      </main>
+
+      <footer>
+        <p>www 🎲 App Brewery 🎲 com</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
