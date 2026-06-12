@@ -7,7 +7,7 @@ A modern, responsive, and visually stunning AI-focused business website built us
 
 ## 🌐 Live Demo
 
-🔗 https://rukshana-roshan.github.io/nexaai-studio-website/
+🔗 https://rukshana-roshan.github.io/nexa-Ai-studio-website/
 
 ---
 
