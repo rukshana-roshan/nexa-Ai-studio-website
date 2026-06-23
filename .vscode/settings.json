@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "full-stack-development-practice/my-task/03.Java-for-loop-and-nested-for-loop-practical-task",
         "full-stack-development-practice/my-task/02.Java-while-loop-practical-task",
         "full-stack-development-practice/my-task/01.Java-operators-and-control-flow-statements",
-        "full-stack-development-practice/my-task/03.Java-for-loop-and-nested-for-loop-practical-task"
+        "full-stack-development-practice/my-task/04.Java Arrays – Practical Tasks"
     ]
 }
