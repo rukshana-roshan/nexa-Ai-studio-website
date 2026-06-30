@@ -1,8 +1,15 @@
 {
     "java.project.sourcePaths": [
+        "full-stack-development-practice/my-task/10.Java OOP – Vehicle Management System",
+        "full-stack-development-practice/my-task/09.Java Inheritance – Practical Task",
+        "full-stack-development-practice/my-task/08.Java Encapsulation – Practical Task",
+        "full-stack-development-practice/my-task/07.Java Constructors – Practical Task",
+        "full-stack-development-practice/my-task/06.Java-String-practical-task",
+        "full-stack-development-practice/my-task/05.Java Arrays & Number Logic – Practical Tasks/06.Java Arrays & Number Logic – Practical Tasks",
+        "full-stack-development-practice/my-task/04.Java Arrays – Practical Tasks",
         "full-stack-development-practice/my-task/03.Java-for-loop-and-nested-for-loop-practical-task",
         "full-stack-development-practice/my-task/02.Java-while-loop-practical-task",
         "full-stack-development-practice/my-task/01.Java-operators-and-control-flow-statements",
-        "full-stack-development-practice/my-task/04.Java Arrays – Practical Tasks"
+        "full-stack-development-practice/my-task/11.Java OOP – Library Management System"
     ]
 }
